@@ -1,6 +1,7 @@
 import React from 'react';
 import Appointment from './Appointment/Appointment';
 import Banner from './Banner.js/Banner';
+import Contact from './Contact/Contact';
 import Exceptional from './Exceptional/Exceptional';
 import Info from './Information/Info';
 import Reviews from './Reviews/Reviews';
@@ -15,6 +16,7 @@ const Home = () => {
       <Exceptional></Exceptional>
       <Appointment></Appointment>
       <Reviews></Reviews>
+      <Contact></Contact>
     </div>
   );
 };

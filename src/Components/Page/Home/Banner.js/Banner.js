@@ -5,7 +5,7 @@ import chair from '../../../../assets/images/chair.png'
 
 const Banner = () => {
   return (
-    <section className='pb-8 lg:pb-0 lg:h-[580px] border-2' style={{ backgroundImage: `url(${backgroundImage})` }}>
+    <section className='pb-8 lg:pb-0 lg:h-[580px]' style={{ backgroundImage: `url(${backgroundImage})` }}>
       <div className="hero mx-auto lg:mt-16 container">
         <div className="hero-content flex-col lg:flex-row-reverse lg:justify-between">
           <img src={chair} className="lg:w-1/2 rounded-lg lg:hover:scale-105 lg:duration-300 shadow-2xl" alt='' />

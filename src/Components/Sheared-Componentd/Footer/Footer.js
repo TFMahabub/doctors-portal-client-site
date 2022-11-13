@@ -3,7 +3,7 @@ import bgImage from '../../../assets/images/footer.png'
 
 const Footer = () => {
   return (
-    <footer className='pt-16 pb-8' style={{ backgroundImage: `url(${bgImage})` }}>
+    <footer className='bg-cover bg-center py-14' style={{ backgroundImage: `url(${bgImage})` }}>
       <div className='container mx-auto px-2 lg:px-0 lg:flex lg:justify-between lg:items-start'>
         <div className=''>
           <h3 className='text-xl font-semibold tracking-wider text-[#939393]'>SERVICES</h3>
@@ -12,13 +12,13 @@ const Footer = () => {
           <a href='' className='text-lg tracking-wider block'>Weekly Checkup</a>
           <a href='' className='text-lg tracking-wider block'>Deep Checkup</a>
         </div>
-        <div className='mt-12'>
+        <div className='mt-12 lg:mt-0'>
           <h3 className='text-xl font-semibold tracking-wider text-[#939393]'>ORAL HEALTH</h3>
           <a href='' className='text-lg tracking-wider block'>Fluoride Treatment</a>
           <a href='' className='text-lg tracking-wider block'>Cavity Filling</a>
           <a href='' className='text-lg tracking-wider block'>Teath Whitening</a>
         </div>
-        <div className='mt-12'>
+        <div className='mt-12 lg:mt-0'>
           <h3 className='text-xl font-semibold tracking-wider text-[#939393]'>OUR ADDRESS</h3>
           <a href='' className='text-lg tracking-wider'>New York - 101010 Hudson</a>
         </div>

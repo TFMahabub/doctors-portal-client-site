@@ -1,8 +1,8 @@
 import React from "react";
 
-const BookingModal = ({appointments, modalTitle}) => {
-
+const BookingModal = ({ appointments, modalTitle }) => {
   const { name, slots } = appointments;
+
   return (
     <div>
       <input type="checkbox" id="booking-modal" className="modal-toggle" />
@@ -14,13 +14,40 @@ const BookingModal = ({appointments, modalTitle}) => {
           >
             ✕
           </label>
-          <h3 className="text-lg font-bold">
-            {modalTitle}
-          </h3>
-          <p className="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p>
+          <h3 className="text-lg font-bold">{modalTitle}</h3>
+          <form action="">
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered w-full mt-4"
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered w-full mt-4"
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered w-full mt-4"
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered w-full mt-4"
+            />
+            <input
+              type="text"
+              placeholder="Type here"
+              className="input input-bordered w-full mt-4"
+            />
+            <button
+              type="submit"
+              className="btn mt-4 w-full tracking-wide text-white "
+            >
+              Submit
+            </button>
+          </form>
         </div>
       </div>
     </div>

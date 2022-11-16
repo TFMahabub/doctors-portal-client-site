@@ -1,20 +1,29 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthProvider } from '../../../../Contexts/AuthContext/AuthContext';
 import WidthFullButton from '../../../../ReUseAble-Components/Buttons/wFullButton';
+import toast from 'react-hot-toast';
 
 const Register = () => {
 
-  const { name } = useContext(AuthProvider)
+  const { user, signUp } = useContext(AuthProvider)
 
-  console.log(name);
 
   const handleOnSubmit = e =>{
     e.preventDefault()
     
     const email = e.target.email.value;
     const password = e.target.password.value;
-    
+    signUp(email, password)
+    .then(result => {
+      console.log(result.user);
+      toast.success('Create user successfully')
+    })
+    .catch(err=>{
+      console.error(err)
+      toast.error('Something went wrong')
+    })
+    console.log(email, password);
   }
   return (
     <section className="lg:h-[90vh] lg:flex lg:justify-center lg:items-center">

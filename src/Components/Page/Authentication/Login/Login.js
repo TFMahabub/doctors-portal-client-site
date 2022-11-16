@@ -1,15 +1,48 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthProvider } from "../../../../Contexts/AuthContext/AuthContext";
 import WidthFullButton from "../../../../ReUseAble-Components/Buttons/wFullButton";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
+
+  const { user, logIn , logInWithGoogle} = useContext(AuthProvider)
+
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  let from = location.state?.from?.pathname || "/";
+
+
+  const handleGoogleLogin = () =>{
+    logInWithGoogle()
+    .then(()=>{
+      toast.success('login successfully')
+      navigate(from, { replace: true });
+    })
+    .catch(err=>{
+      console.error(err)
+      toast.error('Something went wrong')
+    })
+  }
+
+
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    console.log(email, password);
+    logIn(email, password)
+    .then(result=> {
+      console.log(result.user);
+      toast.success('login successfully')
+      navigate(from, { replace: true });
+    })
+    .catch(err=>{
+      console.error(err)
+      toast.error('Something went wrong')
+    })
   };
   return (
     <section className="lg:h-[90vh] lg:flex lg:justify-center lg:items-center">
@@ -49,7 +82,7 @@ const Login = () => {
           <div className="flex-1 h-px sm:w-16 dark:bg-gray-700"></div>
         </div>
         <div className="flex justify-center space-x-4">
-          <button aria-label="Log in with Google" className="p-3 rounded-sm">
+          <button onClick={handleGoogleLogin} aria-label="Log in with Google" className="p-3 rounded-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 32 32"

@@ -28,7 +28,7 @@ const Navbar = () => {
     <li><Link to='/reviews'>Reviews</Link></li>
     <li><Link to='/contact_us'>Contact Us</Link></li>
     {
-      user?.uid ?
+      user?.uid?
       <li className='lg:hidden block'><button onClick={handleSingOut}>SignOut</button></li>
       :
       <li><Link to='/login'>Login</Link></li>

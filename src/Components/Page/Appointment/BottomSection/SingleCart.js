@@ -10,8 +10,8 @@ const SingleCart = ({ ap, setModalTitle }) => {
       </p>
       <p className="tracking-wide">
         {slots.length > 1
-          ? `${slots.length}  SPACESES AVAILABLE`
-          : `${slots.length} SPACES AVAILABLE`}
+          ? `${slots.length} Spaces Available`
+          : `${slots.length} Space Available`}
       </p>
       <button htmlFor="booking-modal" onClick={() => setModalTitle(name)}>
         <label

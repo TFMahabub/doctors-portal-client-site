@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import BookingModal from "./BookingModal";
 import SingleCart from "./SingleCart";
 
-const Carts = () => {
+const Carts = ({selectedDate}) => {
   const [appointments, setAppointments] = useState([]);
   const [modalTitle, setModalTitle] = useState('');
 
   useEffect(() => {
-    fetch("AppoinmentOptions.json")
+    fetch("http://localhost:5000/appointment_options")
       .then((res) => res.json())
       .then((data) => setAppointments(data));
   }, []);
@@ -23,6 +23,7 @@ const Carts = () => {
       <BookingModal
        appointments = {appointments}
        modalTitle={modalTitle}
+       selectedDate={selectedDate}
       ></BookingModal>
     </div>
   );

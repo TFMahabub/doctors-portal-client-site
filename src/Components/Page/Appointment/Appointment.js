@@ -17,7 +17,7 @@ const Appointment = () => {
       />
       <h3 className='text-2xl font-semibold text-secondary text-center'>Available Appointments on {format(selectedDate, 'PP')}</h3>
       <Carts
-      
+        selectedDate={selectedDate}
       />
     </div>
   );

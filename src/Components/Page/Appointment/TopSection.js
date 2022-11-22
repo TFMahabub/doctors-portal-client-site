@@ -16,7 +16,7 @@ const TopSection = ({selectedDate, setSelectedDate}) => {
             mode="single"
             selected = {selectedDate}
             onSelect = {setSelectedDate}
-            className='shadow-2xl p-8'
+            className='shadow-2xl lg:p-5'
           ></DayPicker>
         </div>
       </div>
